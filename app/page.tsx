@@ -9,6 +9,7 @@ import ProductArt from './_components/ProductArt';
 import ProductCard from './_components/ProductCard';
 import SectionHeading from './_components/SectionHeading';
 import { products } from './_data/products';
+import { withBase } from './_lib/withBase';
 
 const svgUri = (svg: string) => `data:image/svg+xml,${encodeURIComponent(svg)}`;
 
@@ -98,7 +99,7 @@ export default function HomePage() {
           </div>
           <div className="hero-art">
             {/* HOME-003: no alt attribute */}
-            <img src="/hero.svg" width={600} height={440} data-pet-issue="HOME-003" />
+            <img src={withBase('/hero.svg')} width={600} height={440} data-pet-issue="HOME-003" />
           </div>
         </div>
         {/* HOME-005: decorative divider with descriptive alt */}
@@ -261,9 +262,9 @@ export default function HomePage() {
           <SectionHeading level={2} eyebrow="Community">Share your trail</SectionHeading>
           <div className="follow-links">
             {/* HOME-008 x3: link with an empty glyph only */}
-            <a href="/help" data-pet-issue="HOME-008"><i className="glyph" /></a>
-            <a href="/account" data-pet-issue="HOME-008"><i className="glyph" /></a>
-            <a href="/orders" data-pet-issue="HOME-008"><i className="glyph" /></a>
+            <a href={withBase('/help')} data-pet-issue="HOME-008"><i className="glyph" /></a>
+            <a href={withBase('/account')} data-pet-issue="HOME-008"><i className="glyph" /></a>
+            <a href={withBase('/orders')} data-pet-issue="HOME-008"><i className="glyph" /></a>
           </div>
         </div>
         <div className="cluster">

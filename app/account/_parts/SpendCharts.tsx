@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { withBase } from '../../_lib/withBase';
 
 const months = ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
 const spend = [120, 85, 240, 60, 310, 150];
@@ -69,7 +70,7 @@ export function OrdersByMonth() {
       <svg className="acc-chart" viewBox="0 0 320 150" role="img" aria-label="Orders by month" data-pet-issue="SVG-005">
         {orderCounts.map((count, i) => (
           <g key={months[i]}>
-            <a href="/orders">
+            <a href={withBase('/orders')}>
               <rect x={20 + i * 48} y={120 - count * 24} width="30" height={count * 24} rx="3" fill="#1f5a8a" />
             </a>
             <text x={35 + i * 48} y="138" textAnchor="middle">{months[i]}</text>
