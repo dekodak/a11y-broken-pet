@@ -16,7 +16,8 @@ const stateDir = join(root, '.pet');
 const pidFile = join(stateDir, 'server.pid');
 const logFile = join(stateDir, 'server.log');
 const baseUrl = process.env.PET_BASE_URL || config.baseUrl;
-const urlOf = (path) => new URL(path, baseUrl).href;
+// Keep a sub-path in PET_BASE_URL (GitHub Pages): resolve "/shop" relative to ".../repo/", not the host root.
+const urlOf = (path) => new URL(path.replace(/^\//, ''), baseUrl.replace(/\/?$/, '/')).href;
 
 const run = (cmd) => {
   const result = spawnSync(cmd, { cwd: root, stdio: 'inherit', shell: true });
