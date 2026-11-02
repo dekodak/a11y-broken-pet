@@ -1,0 +1,30 @@
+{
+  "name": "a11y-broken-pet",
+  "description": "Fernwick Outfitters: a fictional outdoor-gear shop with planted accessibility defects. Scan every page at both viewports, then compare findings with expected/ISSUES.md.",
+  "baseUrl": "http://localhost:4010",
+  "launch": {
+    "install": "npm install",
+    "build": "npm run build",
+    "start": "npm run start",
+    "dev": "npm run dev",
+    "port": 4010,
+    "readyPath": "/",
+    "readyTimeoutMs": 90000
+  },
+  "viewports": [
+    { "id": "desktop", "width": 1440, "height": 900, "isMobile": false },
+    { "id": "mobile", "width": 390, "height": 844, "isMobile": true, "hasTouch": true },
+    { "id": "mobile-landscape", "width": 844, "height": 390, "isMobile": true, "hasTouch": true, "note": "only for MOB-009 (orientation overlay)" }
+  ],
+  "pages": [
+    { "id": "home", "path": "/" },
+    { "id": "dialogs", "path": "/shop" },
+    { "id": "tables", "path": "/orders" },
+    { "id": "tabs", "path": "/product" },
+    { "id": "graphics", "path": "/account" },
+    { "id": "forms", "path": "/checkout" },
+    { "id": "misc", "path": "/help" }
+  ],
+  "expectedIssues": "expected/ISSUES.md",
+  "issueMarkerAttribute": "data-pet-issue"
+}

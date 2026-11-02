@@ -1,0 +1,28 @@
+{
+  "name": "a11y-broken-pet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Intentionally inaccessible Next.js fixture app for testing an accessibility checker",
+  "scripts": {
+    "dev": "next dev -p 4010",
+    "build": "next build",
+    "start": "next start -p 4010",
+    "pet:up": "node scripts/pet.mjs up",
+    "pet:down": "node scripts/pet.mjs down",
+    "pet:rebuild": "node scripts/pet.mjs down && rm -rf .next && node scripts/pet.mjs up",
+    "pet:status": "node scripts/pet.mjs status",
+    "pet:config": "node scripts/pet.mjs config",
+    "pet:verify": "node scripts/pet.mjs verify"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,66 @@
+.shop-head{display:grid;gap:var(--s-4);margin-bottom:var(--s-5)}
+.shop-head h1{margin-bottom:var(--s-2)}
+.shop-head .lead{margin:0;max-width:40rem}
+.shop-actions{display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center}
+.shop-layout{display:grid;gap:var(--s-4)}
+.shop-toolbar{display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;justify-content:space-between;margin-bottom:var(--s-4)}
+.shop-toolbar p{margin:0}
+.sort-field{display:flex;align-items:center;gap:var(--s-2)}
+.sort-field label{font-weight:600;font-size:var(--t-sm)}
+.sort-field select{width:auto;min-width:11rem}
+.shop-empty{padding:var(--s-6) 0;text-align:center}
+.guides{margin-top:var(--s-7)}
+.guide-card h3{margin-bottom:var(--s-2)}
+.guide-card p{color:var(--c-muted)}
+
+/* filters */
+.filters-side{display:none}
+.filter-group{margin-bottom:var(--s-3)}
+.check{display:flex;align-items:center;gap:var(--s-3);min-height:2.75rem;cursor:pointer;font-size:var(--t-sm)}
+.filters-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s-3)}
+.filters-head h2{margin:0;font-size:var(--t-lg)}
+
+/* mobile filters sheet */
+.sheet-backdrop{position:fixed;inset:0;background:rgba(15,29,46,.5);z-index:140}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:80dvh;overflow-y:auto;background:var(--c-surface);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:var(--s-3) var(--s-4) var(--s-5);z-index:150;box-shadow:var(--sh-2)}
+.sheet-grip{width:3rem;height:.3rem;border-radius:var(--r-pill);background:var(--c-border);margin:0 auto var(--s-3)}
+.sheet-title{font:700 var(--t-lg) var(--f-serif);margin-bottom:var(--s-3)}
+
+/* cart */
+.cart-bar{position:fixed;right:var(--s-4);bottom:calc(var(--tabbar-h) + var(--s-3));z-index:80;box-shadow:var(--sh-2)}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(15,29,46,.5);z-index:140}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:100%;background:var(--c-surface);z-index:150;display:flex;flex-direction:column;box-shadow:var(--sh-2)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:var(--s-4) var(--s-5);border-bottom:1px solid var(--c-border)}
+.drawer-title{font:700 var(--t-lg) var(--f-serif)}
+.drawer-lines{list-style:none;flex:1;overflow-y:auto;padding:var(--s-3) var(--s-5)}
+.drawer-lines li{display:grid;grid-template-columns:4.5rem 1fr auto;gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--c-border);align-items:start}
+.line-art{width:4.5rem;aspect-ratio:1;border-radius:var(--r-md);overflow:hidden}
+.line-info p{margin:0}
+.line-qty{display:flex;align-items:center;gap:var(--s-2);margin-top:var(--s-2);font-size:var(--t-sm)}
+.line-qty input{width:4.5rem}
+.drawer-lines .price{margin:0;font-size:var(--t-md)}
+.drawer-foot{display:grid;gap:var(--s-3);padding:var(--s-4) var(--s-5);border-top:1px solid var(--c-border)}
+.drawer-sum{display:flex;justify-content:space-between;font-weight:700}
+
+/* popups */
+.card-menu{position:relative}
+.card-menu-btn{background:rgba(255,255,255,.92);border:1px solid var(--c-border);font-size:1.25rem}
+.card-menu-list{position:absolute;right:0;top:calc(100% + .25rem);width:11rem;padding:.25rem;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-md);box-shadow:var(--sh-2);z-index:5}
+.card-menu-item{padding:.5rem .6rem;font-size:var(--t-sm);cursor:pointer;border-radius:var(--r-sm)}
+.card-menu-item:hover{background:#eef4ef}
+.tip-wrap{position:relative;display:inline-block}
+.returns-btn{display:inline-flex;align-items:center;gap:.4rem;min-height:2.75rem;padding:0 var(--s-4);background:#eef4ef;border:1px solid var(--c-border);border-radius:var(--r-pill);color:var(--c-primary-dark);font-weight:600}
+.tip-pop{position:absolute;top:calc(100% + .25rem);left:0;width:16rem;z-index:20}
+.size-dialog{width:calc(100% - 2rem);max-width:28rem}
+
+@media (min-width:768px){
+ .shop-head{grid-template-columns:1fr auto;align-items:end}
+ .cart-bar{bottom:var(--s-4)}
+ .drawer{width:26rem}
+}
+@media (min-width:1024px){
+ .shop-layout{grid-template-columns:15rem minmax(0,1fr);gap:var(--s-6);align-items:start}
+ .shop-layout .grid-products{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .filters-side{display:block;position:sticky;top:calc(var(--header-h) + var(--s-4))}
+ .shop-toolbar .filters-open,.sheet,.sheet-backdrop{display:none}
+}
